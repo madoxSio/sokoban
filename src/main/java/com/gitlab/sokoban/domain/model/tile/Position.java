@@ -1,4 +1,4 @@
-package com.gitlab.sokoban.domain.model.frame;
+package com.gitlab.sokoban.domain.model.tile;
 
 public class Position {
     private int x;
@@ -7,6 +7,14 @@ public class Position {
     public Position(int x, int y) {
         this.x = x;
         this.y = y;
+    }
+
+    public int getX() {
+        return this.x;
+    }
+
+    public int getY() {
+        return this.y;
     }
 
     @Override

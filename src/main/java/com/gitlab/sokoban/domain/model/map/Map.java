@@ -4,6 +4,7 @@ import com.gitlab.sokoban.domain.model.tile.Position;
 import com.gitlab.sokoban.domain.model.tile.State;
 import com.gitlab.sokoban.domain.model.tile.Tile;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Map {
@@ -11,10 +12,10 @@ public class Map {
     private final int height;
     private final List<Tile> tiles;
 
-    public Map(int width, int height, List<Tile> tiles) {
+    public Map(int width, int height) {
         this.width = width;
         this.height = height;
-        this.tiles = tiles;
+        this.tiles = new ArrayList<>();
     }
 
     public boolean isWall(Position position) {
@@ -23,8 +24,16 @@ public class Map {
     }
 
     public boolean inside(Position position) {
-        return position.getX() >= 0 && position.getX() < width &&
-                position.getY() >= 0 && position.getY() < height;
+        return position.getX() > 0 && position.getX() <= width &&
+                position.getY() > 0 && position.getY() <= height;
+    }
+
+    public void addTile(Tile tile) {
+        if (!inside(tile.getPosition())) {
+            throw new IllegalArgumentException("Tile is outside of the map");
+        }
+
+        tiles.add(tile);
     }
 
     public List<Tile> getTiles() {
@@ -42,5 +51,14 @@ public class Map {
     @Override
     public int hashCode() {
         return 31 * width + 31 * height + tiles.hashCode();
+    }
+
+    @Override
+    public String toString() {
+        return "Map{" +
+                "width=" + width +
+                ", height=" + height +
+                ", tiles=" + tiles +
+                '}';
     }
 }

@@ -2,6 +2,7 @@ package com.gitlab.sokoban.domain;
 
 import com.gitlab.sokoban.domain.model.map.Map;
 import com.gitlab.sokoban.domain.model.tile.Position;
+import com.gitlab.sokoban.domain.model.tile.State;
 import com.gitlab.sokoban.domain.model.tile.Tile;
 
 import java.util.List;
@@ -15,6 +16,12 @@ public class Sokoban {
         this.map = map;
         this.storages = storages;
         this.playerPosition = playerPosition;
+        initMap();
+    }
+
+    private void initMap() {
+        map.addTile(new Tile(State.PLAYER, playerPosition));
+        storages.forEach(storage -> map.addTile(new Tile(State.STORAGE, storage)));
     }
 
     public List<Tile> getTiles() {

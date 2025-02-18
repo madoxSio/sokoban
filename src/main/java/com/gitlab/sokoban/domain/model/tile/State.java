@@ -1,4 +1,4 @@
-package com.gitlab.sokoban.domain.model.frame;
+package com.gitlab.sokoban.domain.model.tile;
 
 public enum State {
     PLAYER,

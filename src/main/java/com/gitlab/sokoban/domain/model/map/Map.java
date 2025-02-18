@@ -1,4 +1,8 @@
-package com.gitlab.sokoban.domain.model.frame;
+package com.gitlab.sokoban.domain.model.map;
+
+import com.gitlab.sokoban.domain.model.tile.Position;
+import com.gitlab.sokoban.domain.model.tile.State;
+import com.gitlab.sokoban.domain.model.tile.Tile;
 
 import java.util.List;
 

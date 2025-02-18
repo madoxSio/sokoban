@@ -39,14 +39,12 @@ class MapTest {
 
     @Test
     void inside() {
-        assertTrue(map.inside(new Position(1, 1)));
+        assertTrue(map.inside(new Position(0, 0)));
         assertTrue(map.inside(new Position(1, 2)));
-        assertTrue(map.inside(new Position(5, 5)));
+        assertTrue(map.inside(new Position(4, 4)));
 
-        assertFalse(map.inside(new Position(0, 0)));
-        assertFalse(map.inside(new Position(0, 1)));
-        assertFalse(map.inside(new Position(1, 0)));
-        assertFalse(map.inside(new Position(6, 5)));
+        assertFalse(map.inside(new Position(5, 4)));
+        assertFalse(map.inside(new Position(5, 5)));
     }
 
     @Test

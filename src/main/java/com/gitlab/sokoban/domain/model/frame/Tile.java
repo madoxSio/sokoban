@@ -11,4 +11,12 @@ public class Tile {
         this.state = state;
         this.position = position;
     }
+
+    public Position getPosition() {
+        return position;
+    }
+
+    public State getState() {
+        return state;
+    }
 }

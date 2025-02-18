@@ -1,4 +1,4 @@
-package com.gitlab.sokoban.domain.features;
+package com.gitlab.sokoban.domain.model.frame;
 
 public class Position {
     private int x;

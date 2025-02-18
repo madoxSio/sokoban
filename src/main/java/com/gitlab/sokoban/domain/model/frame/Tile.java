@@ -1,6 +1,5 @@
-package com.gitlab.sokoban.domain.features;
+package com.gitlab.sokoban.domain.model.frame;
 
-import javax.swing.plaf.nimbus.State;
 import javax.swing.text.Position;
 
 public class Tile {

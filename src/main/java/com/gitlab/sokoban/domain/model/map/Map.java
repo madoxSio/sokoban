@@ -39,8 +39,4 @@ public class Map {
         return width == map.width && height == map.height && tiles.equals(map.tiles);
     }
 
-    @Override
-    public int hashCode() {
-        return 31 * width + 31 * height + tiles.hashCode();
-    }
 }

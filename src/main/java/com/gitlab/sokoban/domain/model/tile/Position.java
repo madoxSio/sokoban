@@ -29,11 +29,5 @@ public class Position {
         return x == position.x && y == position.y;
     }
 
-    public int getX() {
-        return x;
-    }
 
-    public int getY() {
-        return y;
-    }
 }
